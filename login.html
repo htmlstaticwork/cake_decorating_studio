@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%23FF5D8F' d='M416 192c0-35.3-28.7-64-64-64h-16c0-35.3-28.7-64-64-64h-32c-35.3 0-64 28.7-64 64h-16c-35.3 0-64 28.7-64 64v32h320v-32zM80 448c0 17.7 14.3 32 32 32h288c17.7 0 32-14.3 32-32v-160H80v160zm352-256H80c-44.2 0-80 35.8-80 80v184c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V272c0-44.2-35.8-80-80-80z'/></svg>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | BakeD Artisan Boutique</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.435.0/dist/umd/lucide.min.js"></script>
 </head>
 <body class="auth-page">
 
-    <div class="auth-card" data-animate>
+    
         <div class="auth-toggles">
-            <button class="theme-toggle" aria-label="Toggle Theme">
-                <i data-lucide="moon" style="display: block;"></i>
-                <i data-lucide="sun" style="display: none;"></i>
-            </button>
-            <button class="rtl-toggle" aria-label="Toggle Direction">
-                <i data-lucide="languages"></i>
-            </button>
+            <button class="theme-toggle" aria-label="Toggle Theme"><svg data-lucide="moon" class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><svg data-lucide="sun" class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button>
+            <button class="rtl-toggle" aria-label="Toggle Direction"><svg data-lucide="languages" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></button>
         </div>
 
-        <a href="index.html" class="logo" style="margin-bottom: 30px; display: inline-block;">
-            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="width: 40px; height: 40px; margin-bottom: -10px;"><path d="M416 192c0-35.3-28.7-64-64-64h-16c0-35.3-28.7-64-64-64h-32c-35.3 0-64 28.7-64 64h-16c-35.3 0-64 28.7-64 64v32h320v-32zM80 448c0 17.7 14.3 32 32 32h288c17.7 0 32-14.3 32-32v-160H80v160zm352-256H80c-44.2 0-80 35.8-80 80v184c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V272c0-44.2-35.8-80-80-80z"/></svg>
+    <div class="auth-card" data-animate>
+
+        <a href="index.html" class="logo" style="margin-bottom: 30px; justify-content: center;">
+            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path d="M416 192c0-35.3-28.7-64-64-64h-16c0-35.3-28.7-64-64-64h-32c-35.3 0-64 28.7-64 64h-16c-35.3 0-64 28.7-64 64v32h320v-32zM80 448c0 17.7 14.3 32 32 32h288c17.7 0 32-14.3 32-32v-160H80v160zm352-256H80c-44.2 0-80 35.8-80 80v184c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V272c0-44.2-35.8-80-80-80z"/>
+            </svg>
             BakeD
         </a>
         
@@ -37,7 +37,7 @@
             <div class="form-group">
                 <label class="form-label">Password</label>
                 <div class="input-wrapper">
-                    <input type="password" class="form-input" placeholder="••••••••" required>
+                    <input type="password" class="form-input" placeholder="*******" required>
                     <span class="password-toggle">
                         <i data-lucide="eye"></i>
                         <i data-lucide="eye-off" style="display: none;"></i>
@@ -74,7 +74,7 @@
                 Continue with Apple
             </button>
             <button class="social-btn btn-email">
-                <i data-lucide="mail" style="width: 20px; height: 20px;"></i>
+                <svg viewBox="0 0 24 24" style="width: 20px; height: 20px;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                 Continue with Email
             </button>
         </div>
@@ -85,5 +85,15 @@
     </div>
 
     <script src="script.js"></script>
+<button class="back-to-top" aria-label="Back to Top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;"><path d="m18 15-6-6-6 6"/></svg></button>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

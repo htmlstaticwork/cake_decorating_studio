@@ -61,6 +61,18 @@ const init = () => {
       navbar.classList.remove('scrolled');
     }
   });
+
+  // Active Link Highlighting
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPath) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
   
   // Scroll Animations
   const observerOptions = {
@@ -109,14 +121,16 @@ const init = () => {
 };
 
 const updateThemeIcons = () => {
-  const current = document.documentElement.getAttribute('data-theme');
-  document.querySelectorAll('.theme-toggle [data-lucide]').forEach(icon => {
-    if (current === 'dark' && icon.getAttribute('data-lucide') === 'sun') {
-      icon.style.display = 'block';
-    } else if (current === 'light' && icon.getAttribute('data-lucide') === 'moon') {
-      icon.style.display = 'block';
-    } else {
-      icon.style.display = 'none';
+  const current = document.documentElement.getAttribute('data-theme') || 'light';
+  document.querySelectorAll('.theme-toggle svg, .theme-toggle i').forEach(icon => {
+    const isSun = icon.classList.contains('sun-icon') || icon.classList.contains('lucide-sun') || icon.getAttribute('data-lucide') === 'sun';
+    const isMoon = icon.classList.contains('moon-icon') || icon.classList.contains('lucide-moon') || icon.getAttribute('data-lucide') === 'moon';
+    
+    if (isSun) {
+      icon.style.setProperty('display', current === 'dark' ? 'block' : 'none', 'important');
+    }
+    if (isMoon) {
+      icon.style.setProperty('display', current === 'dark' ? 'none' : 'block', 'important');
     }
   });
 };
@@ -133,8 +147,27 @@ document.addEventListener('DOMContentLoaded', () => {
   init();
   initIcons();
 });
-window.addEventListener('load', initIcons);
+window.addEventListener('load', () => {
+  lucide.createIcons();
+  setTimeout(initIcons, 500);
+  setTimeout(initIcons, 1500);
+  setTimeout(initIcons, 3000);
+});
 
-// Extra safety for dynamic environments
-setTimeout(initIcons, 500);
-setTimeout(initIcons, 2000);
+document.addEventListener('DOMContentLoaded', () => {
+  // Back to Top Button Logic
+  const backToTopBtn = document.querySelector('.back-to-top');
+  if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
