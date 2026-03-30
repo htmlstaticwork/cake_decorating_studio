@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | BakeD Artisan Boutique</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- Shared Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M416 192c0-35.3-28.7-64-64-64h-16c0-35.3-28.7-64-64-64h-32c-35.3 0-64 28.7-64 64h-16c-35.3 0-64 28.7-64 64v32h320v-32zM80 448c0 17.7 14.3 32 32 32h288c17.7 0 32-14.3 32-32v-160H80v160zm352-256H80c-44.2 0-80 35.8-80 80v184c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V272c0-44.2-35.8-80-80-80z" />
+                </svg>
+                BakeD
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="home2.html" class="nav-link">Home 2</a>
+                <a href="services.html" class="nav-link active">Services</a>
+                <a href="workshops.html" class="nav-link">Workshops</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle">
+                    <i data-lucide="moon" style="display: block;"></i>
+                    <i data-lucide="sun" style="display: none;"></i>
+                </button>
+                <button class="rtl-toggle">
+                    <i data-lucide="languages"></i>
+                </button>
+                <a href="login.html" class="btn btn-primary nav-login-btn" style="padding: 10px 24px;">Login</a>
+                <button class="menu-btn">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Side Drawer -->
+    <div class="overlay"></div>
+    <div class="drawer">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M416 192c0-35.3-28.7-64-64-64h-16c0-35.3-28.7-64-64-64h-32c-35.3 0-64 28.7-64 64h-16c-35.3 0-64 28.7-64 64v32h320v-32zM80 448c0 17.7 14.3 32 32 32h288c17.7 0 32-14.3 32-32v-160H80v160zm352-256H80c-44.2 0-80 35.8-80 80v184c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V272c0-44.2-35.8-80-80-80z" />
+                </svg>
+                BakeD
+            </a>
+        </div>
+        <nav style="display: flex; flex-direction: column; gap: 20px;">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="home2.html" class="nav-link">Home 2</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="login.html" class="btn btn-primary">Login</a>
+        </nav>
+        <div style="margin-top: auto; display: flex; gap: 20px; justify-content: center;">
+            <button class="theme-toggle" style="background: var(--bg-secondary); width: 50px; height: 50px;">
+                <i data-lucide="moon"></i>
+                <i data-lucide="sun" style="display: none;"></i>
+            </button>
+            <button class="rtl-toggle" style="background: var(--bg-secondary); width: 50px; height: 50px;">
+                <i data-lucide="languages"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section (Background Style) -->
+    <section class="hero-bg"
+        style="background-image: url('https://imgproxy.domestika.org/unsafe/w:820/plain/src://content-items/017/010/716/interior_img1-original.jpg?1759906007');">
+        <div class="container" data-animate>
+            <span class="section-subtitle">Exquisite Expertise</span>
+            <h1 class="section-title" style="color: #fff;">The Art Of The Pâtisserie</h1>
+            <p style="color: rgba(255,255,255,0.8); max-width: 700px; margin: 0 auto;">We don't just bake; we architect
+                memories. Explore our multi-disciplinary services designed for the most discerning palates.</p>
+        </div>
+    </section>
+
+    <!-- Detailed Services List -->
+    <section class="section">
+        <div class="container">
+            <!-- Service 1 -->
+            <div class="service-row" data-animate>
+                <div class="service-content">
+                    <i data-lucide="heart"
+                        style="color: var(--color-primary); width: 44px; height: 44px;"></i>
+                    <h2>Signature Wedding Creations</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 25px;">Our flagship service. We work closely
+                        with couples to create a centerpiece that reflects their personality, venue architecture, and
+                        bridal style. From sugar-sculpted flowers to minimalist geometric tiers.</p>
+                    <ul>
+                        <li>✓ Private Tasting Session</li>
+                        <li>✓ Bespoke Flavor Design</li>
+                        <li>✓ Sketch & Visualization</li>
+                        <li>✓ On-site Setup & Styling</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Inquire About Your Date</a>
+                </div>
+                <div class="service-image">
+                    <img src="https://imgproxy.domestika.org/unsafe/w:820/plain/src://content-items/017/010/716/interior_img1-original.jpg?1759906007"
+                        alt="Wedding Package">
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-row reverse" data-animate>
+                <div class="service-content">
+                    <i data-lucide="briefcase"
+                        style="color: var(--color-primary); width: 44px; height: 44px;"></i>
+                    <h2>Luxury Corporate Gifting</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 25px;">Elevate your corporate events and
+                        client relations. We provide branded gourmet sets and event centerpieces that leave a lasting
+                        impression of professionalism and quality.</p>
+                    <ul>
+                        <li>✓ Custom Branding Options</li>
+                        <li>✓ Bulk Gourmet Orders</li>
+                        <li>✓ Corporate Gala Centerpieces</li>
+                        <li>✓ Managed Nationwide Delivery</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Corporate Inquiry</a>
+                </div>
+                <div class="service-image">
+                    <img src="https://sunflourbakingcompany.com/cdn/shop/articles/sunflour-bakery-company-1080x675.jpg?v=1560364289"
+                        alt="Corporate Service">
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-row" data-animate>
+                <div class="service-content">
+                    <i data-lucide="graduation-cap"
+                        style="color: var(--color-primary); width: 44px; height: 44px;"></i>
+                    <h2>The Masterclass Experience</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 25px;">Learn the secrets of the masters. Our
+                        boutique workshops cover everything from basic piping to advanced structural cake assembly and
+                        sugar artistry.</p>
+                    <ul>
+                        <li>✓ Intimate Class Sizes</li>
+                        <li>✓ Professional Kit Included</li>
+                        <li>✓ Certification of Completion</li>
+                        <li>✓ Seasonal Techniques</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">View Workshop Calendar</a>
+                </div>
+                <div class="service-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOch3ve9QZhaTAYN3G3TyiB5Epytbl71nWaQ&s"
+                        alt="Workshops">
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-row reverse" data-animate>
+                <div class="service-content">
+                    <i data-lucide="sparkles"
+                        style="color: var(--color-primary); width: 44px; height: 44px;"></i>
+                    <h2>Kids Fantasy Collections</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 25px;">Magical, story-book inspired cakes
+                        that bring children's imaginations to life with playful designs and vibrant organic colors.</p>
+                    <ul>
+                        <li>✓ Character Sculpting</li>
+                        <li>✓ Interactive Elements</li>
+                        <li>✓ Health-Conscious Ingredients</li>
+                        <li>✓ Theme Personalization</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Plan a Party</a>
+                </div>
+                <div class="service-image">
+                    <img src="https://www.bakingo.com/blog/wp-content/uploads/2024/11/fairytale-fantasy-a-slice-of-magic.jpg"
+                        alt="Kids Cakes">
+                </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="service-row" data-animate>
+                <div class="service-content">
+                    <i data-lucide="crown"
+                        style="color: var(--color-primary); width: 44px; height: 44px;"></i>
+                    <h2>Anniversary Luxe</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 25px;">Celebrate decades of love with
+                        nostalgic flavor profiles and timeless designs that honor your shared history.</p>
+                    <ul>
+                        <li>✓ Vintage Piping Styles</li>
+                        <li>✓ Editable Photo Transfers</li>
+                        <li>✓ Premium Gift Wrapping</li>
+                        <li>✓ Anniversary Planning Support</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Book Anniversary Cake</a>
+                </div>
+                <div class="service-image">
+                    <img src="https://cassette.sphdigital.com.sg/image/fzine/d4d44baf6ea4922b97be971a572839ae6bd048e3a3f0741abbae3102981e48ec?w=1000&q=85"
+                        alt="Anniversary">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px;">
+                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="width: 30px; height: 30px; fill: var(--color-primary);"><path d="M416 192c0-35.3-28.7-64-64-64h-16c0-35.3-28.7-64-64-64h-32c-35.3 0-64 28.7-64 64h-16c-35.3 0-64 28.7-64 64v32h320v-32zM80 448c0 17.7 14.3 32 32 32h288c17.7 0 32-14.3 32-32v-160H80v160zm352-256H80c-44.2 0-80 35.8-80 80v184c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V272c0-44.2-35.8-80-80-80z"/></svg>
+                        BakeD
+                    </a>
+                    <p class="footer-tagline">Redefining the art of cake decoration since 2012. We create edible masterpieces for life's most beautiful moments.</p>
+                    <div class="footer-socials" style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 25px;">
+                        <a href="#" class="social-icon icon-instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="social-icon icon-facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="social-icon icon-twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="social-icon icon-linkedin"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="services.html" class="footer-link">Our Services</a>
+                    <a href="workshops.html" class="footer-link">Workshops</a>
+                    <a href="blog.html" class="footer-link">Blog & News</a>
+                    <a href="contact.html" class="footer-link">Get in Touch</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Collections</h3>
+                    <a href="#" class="footer-link">Wedding Cakes</a>
+                    <a href="#" class="footer-link">Birthday Luxe</a>
+                    <a href="#" class="footer-link">Corporate Gifting</a>
+                    <a href="#" class="footer-link">Workshops</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p class="footer-link" style="display: flex; gap: 10px; align-items: center; cursor: default;">
+                        <i data-lucide="map-pin" style="width: 16px;"></i> 12 Sugar Bloom Lane, NY
+                    </p>
+                    <p class="footer-link" style="display: flex; gap: 10px; align-items: center; cursor: default;">
+                        <i data-lucide="phone" style="width: 16px;"></i> +1 (555) BAKE-ARTRCTY
+                    </p>
+                    <p class="footer-link" style="display: flex; gap: 10px; align-items: center; cursor: default;">
+                        <i data-lucide="mail" style="width: 16px;"></i> hello@bakedartisan.com
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BakeD Artisan Boutique. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

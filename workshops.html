@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BakeD | Artisan Workshops & Masterclasses</title>
+    <meta name="description"
+        content="Join Isabella Thorne for exclusive cake decoration masterclasses. Learn sugar artistry, structural engineering, and luxury pâtisserie from the experts.">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Specific overrides for Workshops Page */
+        .workshop-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .workshop-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+        .workshop-card .card-content {
+            padding: 40px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .curriculum-grid, .upcoming-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 25px !important;
+            }
+            /* Centers the last odd card in a 2-column grid */
+            .grid .card:last-child:nth-child(odd) {
+                grid-column: span 2;
+                max-width: 450px;
+                margin: 0 auto;
+            }
+            .workshop-card img {
+                height: 240px;
+            }
+            .workshop-card .card-content {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .curriculum-grid, .upcoming-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .workshop-card img {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Shared Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M416 192c0-35.3-28.7-64-64-64h-16c0-35.3-28.7-64-64-64h-32c-35.3 0-64 28.7-64 64h-16c-35.3 0-64 28.7-64 64v32h320v-32zM80 448c0 17.7 14.3 32 32 32h288c17.7 0 32-14.3 32-32v-160H80v160zm352-256H80c-44.2 0-80 35.8-80 80v184c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V272c0-44.2-35.8-80-80-80z" />
+                </svg>
+                BakeD
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="home2.html" class="nav-link">Home 2</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="workshops.html" class="nav-link active">Workshops</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle Theme">
+                    <i data-lucide="moon" style="display: block;"></i>
+                    <i data-lucide="sun" style="display: none;"></i>
+                </button>
+                <button class="rtl-toggle" aria-label="Toggle Direction">
+                    <i data-lucide="languages"></i>
+                </button>
+                <a href="login.html" class="btn btn-primary nav-login-btn">Login</a>
+                <button class="menu-btn" aria-label="Open Menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="overlay"></div>
+    <div class="drawer">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M416 192c0-35.3-28.7-64-64-64h-16c0-35.3-28.7-64-64-64h-32c-35.3 0-64 28.7-64 64h-16c-35.3 0-64 28.7-64 64v32h320v-32zM80 448c0 17.7 14.3 32 32 32h288c17.7 0 32-14.3 32-32v-160H80v160zm352-256H80c-44.2 0-80 35.8-80 80v184c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V272c0-44.2-35.8-80-80-80z" />
+                </svg>
+                BakeD
+            </a>
+        </div>
+        <nav style="display: flex; flex-direction: column; gap: 20px;">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="home2.html" class="nav-link">Home 2</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="workshops.html" class="nav-link">Workshops</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="login.html" class="btn btn-primary">Login</a>
+        </nav>
+    </div>
+
+    <!-- Workshop Hero -->
+    <section class="premium-hero"
+        style="min-height: 100vh; background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc_AR6V5D9LGnvrJNz9fCOEE6Wiynv7jmUrg&s'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; position: relative; color: white;">
+        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.6);"></div>
+        <div class="container" style="position: relative; text-align: center;" data-animate>
+            <span style="letter-spacing: 5px; text-transform: uppercase; font-weight: 300;">Elite Education</span>
+            <h1 style="font-size: clamp(3rem, 10vw, 5.5rem); margin: 20px 0;">Master The Art <br>Of <span
+                    style="color: var(--color-primary);">Luxury Artistry.</span></h1>
+            <p style="max-width: 750px; margin: 0 auto 40px; font-size: 1.25rem; opacity: 0.9;">Join Isabella Thorne for exclusive masterclasses. Learn the secrets of sugar artistry, structural engineering, and high-end pâtisserie.</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="#classes" class="btn btn-primary" style="min-width: 250px; justify-content: center;">Explore Curriculum</a>
+                <a href="contact.html" class="btn btn-secondary" style="border-color: white; color: white; min-width: 250px; justify-content: center;">Private Studio 1-on-1</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialized Curriculum (Now forced 2x2 on 768px) -->
+    <section class="section" id="classes">
+        <div class="container">
+            <header class="section-header" data-animate style="text-align: center;">
+                <span class="section-subtitle">Categories</span>
+                <h2 class="section-title">Specialized Curriculum</h2>
+                <p style="max-width: 700px; margin: 0 auto; color: var(--text-secondary);">Four pillars of fundamental excellence. Choose your specialization.</p>
+            </header>
+
+            <div class="grid curriculum-grid" style="grid-template-columns: repeat(4, 1fr);" data-animate>
+                <!-- Card 1 -->
+                <div class="card workshop-card" style="padding: 0; overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=800" alt="Sugar Floristry">
+                    <div class="card-content">
+                        <div style="background: #F8F8F8; width: 60px; height: 60px; border-radius: 18px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--color-primary);">
+                            <i data-lucide="flower-2"></i>
+                        </div>
+                        <h3>Sugar Floristry</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 24px;">Sculpt hyper-realistic sugar flowers that defy nature's limitations.</p>
+                        <a href="contact.html" class="btn btn-secondary" style="width: 100%; margin-top: auto; justify-content: center;">Explore Level 1-3</a>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="card workshop-card" style="padding: 0; overflow: hidden;">
+                    <img src="https://sweetmantra.in/wp-content/uploads/2025/03/Painting-cake-for-girl.jpg" alt="Architectural Tiers">
+                    <div class="card-content">
+                        <div style="background: #F8F8F8; width: 60px; height: 60px; border-radius: 18px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--color-primary);">
+                            <i data-lucide="box"></i>
+                        </div>
+                        <h3>Architectural Tiers</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 24px;">Master the engineering required for gravity-defying cake structures.</p>
+                        <a href="contact.html" class="btn btn-secondary" style="width: 100%; margin-top: auto; justify-content: center;">Deep Engineering</a>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="card workshop-card" style="padding: 0; overflow: hidden;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQC6mFZS6LGD33a3swzkW_TGIEbGI-lx6hpA&s" alt="Surface Artistry">
+                    <div class="card-content">
+                        <div style="background: #F8F8F8; width: 60px; height: 60px; border-radius: 18px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--color-primary);">
+                            <i data-lucide="palette"></i>
+                        </div>
+                        <h3>Surface Artistry</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 24px;">Techniques in oil-painting, watercolor effects, and edible jewelry.</p>
+                        <a href="contact.html" class="btn btn-secondary" style="width: 100%; margin-top: auto; justify-content: center;">Fine Arts Intro</a>
+                    </div>
+                </div>
+                <!-- Card 4 (Added for 2x2 layout) -->
+                <div class="card workshop-card" style="padding: 0; overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=800" alt="Chocolate mastery">
+                    <div class="card-content">
+                        <div style="background: #F8F8F8; width: 60px; height: 60px; border-radius: 18px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--color-primary);">
+                            <i data-lucide="layers"></i>
+                        </div>
+                        <h3>Chocolate Mastery</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 24px;">The science of tempering and creating complex chocolate garnishes.</p>
+                        <a href="contact.html" class="btn btn-secondary" style="width: 100%; margin-top: auto; justify-content: center;">Pâtisserie Core</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Workshops -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <header class="section-header" data-animate style="text-align: center;">
+                <span class="section-subtitle">Live Sessions</span>
+                <h2 class="section-title">Upcoming Workshops</h2>
+            </header>
+
+            <div class="grid upcoming-grid" style="grid-template-columns: repeat(3, 1fr);" data-animate>
+                <!-- Workshop Card 1 -->
+                <div class="card workshop-card" style="padding: 0; overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=800" alt="Workshop">
+                    <div class="card-content">
+                        <div style="background: var(--bg-primary); text-align: center; padding: 10px 24px; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 20px;">
+                            <p style="font-weight: 700; font-size: 1.4rem; color: var(--color-primary);">12</p>
+                            <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Apr</p>
+                        </div>
+                        <h4 style="margin-bottom: 12px;">Modern Wedding Foundations</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 20px; display: flex; gap: 8px; align-items: center; justify-content: center;">
+                            <i data-lucide="clock" style="width: 14px;"></i> 10:00 AM - 4:00 PM
+                        </p>
+                        <div style="margin-bottom: 25px;">
+                            <p style="font-weight: 700; color: var(--color-primary); font-size: 1.2rem;">$295</p>
+                            <p style="font-size: 0.8rem; color: #22C55E;">4 Slots Left</p>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary" style="width: 100%; margin-top: auto; justify-content: center;">Book Seat</a>
+                    </div>
+                </div>
+
+                <!-- Workshop Card 2 -->
+                <div class="card workshop-card" style="padding: 0; overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&q=80&w=800" alt="Workshop">
+                    <div class="card-content">
+                        <div style="background: var(--bg-primary); text-align: center; padding: 10px 24px; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 20px;">
+                            <p style="font-weight: 700; font-size: 1.4rem; color: var(--color-primary);">25</p>
+                            <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Apr</p>
+                        </div>
+                        <h4 style="margin-bottom: 12px;">Isabella's Signature Peony</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 20px; display: flex; gap: 8px; align-items: center; justify-content: center;">
+                            <i data-lucide="video" style="width: 14px;"></i> Virtual Masterclass
+                        </p>
+                        <div style="margin-bottom: 25px;">
+                            <p style="font-weight: 700; color: var(--color-primary); font-size: 1.2rem;">$150</p>
+                            <p style="font-size: 0.8rem; color: #EAB308;">Last Slot</p>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary" style="width: 100%; margin-top: auto; justify-content: center;">Book Seat</a>
+                    </div>
+                </div>
+
+                <!-- Workshop Card 3 -->
+                <div class="card workshop-card" style="padding: 0; overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=800" alt="Workshop">
+                    <div class="card-content">
+                        <div style="background: var(--bg-primary); text-align: center; padding: 10px 24px; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 20px;">
+                            <p style="font-weight: 700; font-size: 1.4rem; color: var(--color-primary);">05</p>
+                            <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">May</p>
+                        </div>
+                        <h4 style="margin-bottom: 12px;">Structural Engineering intensive</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 20px; display: flex; gap: 8px; align-items: center; justify-content: center;">
+                            <i data-lucide="map-pin" style="width: 14px;"></i> Studio Day
+                        </p>
+                        <div style="margin-bottom: 25px;">
+                            <p style="font-weight: 700; color: var(--color-primary); font-size: 1.2rem;">$450</p>
+                            <p style="font-size: 0.8rem; color: #22C55E;">Available</p>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary" style="width: 100%; margin-top: auto; justify-content: center;">Book Seat</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+        <div class="container">
+            <div
+                style="background: var(--bg-primary); padding: 80px; border-radius: 40px; border: 1px solid var(--border-color); text-align: center;" data-animate>
+                <div style="color: var(--color-primary); margin-bottom: 30px; display: flex; justify-content: center;">
+                    <i data-lucide="quote" style="width: 48px; height: 48px;"></i>
+                </div>
+                <h2 style="font-size: 2.2rem; margin-bottom: 30px; font-style: italic; max-width: 900px; margin-left: auto; margin-right: auto;">"Isabella Thorne has a unique way of translating complex sculptural concepts into something every artist can understand. This workshop changed my perspective on pastry completely."</h2>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 16px;">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150"
+                        alt="Student" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                    <div style="text-align: left;">
+                        <p style="font-weight: 700;">Sophia Chen</p>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary);">Executive Pastry Chef, Paris</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px;">
+                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"
+                            style="width: 30px; height: 30px; fill: var(--color-primary);">
+                            <path
+                                d="M416 192c0-35.3-28.7-64-64-64h-16c0-35.3-28.7-64-64-64h-32c-35.3 0-64 28.7-64 64h-16c-35.3 0-64 28.7-64 64v32h320v-32zM80 448c0 17.7 14.3 32 32 32h288c17.7 0 32-14.3 32-32v-160H80v160zm352-256H80c-44.2 0-80 35.8-80 80v184c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V272c0-44.2-35.8-80-80-80z" />
+                        </svg>
+                        BakeD
+                    </a>
+                    <p class="footer-tagline">Redefining the art of cake decoration since 2012. We create edible masterpieces for life's most beautiful moments.</p>
+                    <div class="footer-socials" style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 25px;">
+                        <a href="#" class="social-icon icon-instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="social-icon icon-facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="social-icon icon-twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="social-icon icon-linkedin"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="services.html" class="footer-link">Our Services</a>
+                    <a href="workshops.html" class="footer-link">Workshops</a>
+                    <a href="blog.html" class="footer-link">Blog & News</a>
+                    <a href="contact.html" class="footer-link">Get in Touch</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Collections</h3>
+                    <a href="#" class="footer-link">Wedding Cakes</a>
+                    <a href="#" class="footer-link">Birthday Luxe</a>
+                    <a href="#" class="footer-link">Corporate Gifting</a>
+                    <a href="#" class="footer-link">Workshops</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p class="footer-link" style="display: flex; gap: 10px; align-items: center; cursor: default;">
+                        <i data-lucide="map-pin" style="width: 16px;"></i> 12 Sugar Bloom Lane, NY
+                    </p>
+                    <p class="footer-link" style="display: flex; gap: 10px; align-items: center; cursor: default;">
+                        <i data-lucide="phone" style="width: 16px;"></i> +1 (555) BAKE-ARTRCTY
+                    </p>
+                    <p class="footer-link" style="display: flex; gap: 10px; align-items: center; cursor: default;">
+                        <i data-lucide="mail" style="width: 16px;"></i> hello@bakedartisan.com
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BakeD Artisan Boutique. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

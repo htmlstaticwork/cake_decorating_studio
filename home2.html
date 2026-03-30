@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BakeD | The Premium Pâtisserie Experience (Home 2)</title>
+    <meta name="description"
+        content="Explore our most exclusive cake collections. Home 2 takes you deeper into the artisan process of BakeD.">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- Shared Navbar (Step 4 Requirement: Pixel Identical) -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M416 192c0-35.3-28.7-64-64-64h-16c0-35.3-28.7-64-64-64h-32c-35.3 0-64 28.7-64 64h-16c-35.3 0-64 28.7-64 64v32h320v-32zM80 448c0 17.7 14.3 32 32 32h288c17.7 0 32-14.3 32-32v-160H80v160zm352-256H80c-44.2 0-80 35.8-80 80v184c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V272c0-44.2-35.8-80-80-80z" />
+                </svg>
+                BakeD
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="home2.html" class="nav-link active">Home 2</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="workshops.html" class="nav-link">Workshops</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle Theme">
+                    <i data-lucide="moon" style="display: block;"></i>
+                    <i data-lucide="sun" style="display: none;"></i>
+                </button>
+                <button class="rtl-toggle" aria-label="Toggle Direction">
+                    <i data-lucide="languages"></i>
+                </button>
+                <a href="login.html" class="btn btn-primary nav-login-btn" style="padding: 10px 24px;">Login</a>
+                <button class="menu-btn" aria-label="Open Menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer (Shared) -->
+    <div class="overlay"></div>
+    <div class="drawer">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M416 192c0-35.3-28.7-64-64-64h-16c0-35.3-28.7-64-64-64h-32c-35.3 0-64 28.7-64 64h-16c-35.3 0-64 28.7-64 64v32h320v-32zM80 448c0 17.7 14.3 32 32 32h288c17.7 0 32-14.3 32-32v-160H80v160zm352-256H80c-44.2 0-80 35.8-80 80v184c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V272c0-44.2-35.8-80-80-80z" />
+                </svg>
+                BakeD
+            </a>
+        </div>
+        <nav style="display: flex; flex-direction: column; gap: 20px;">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="home2.html" class="nav-link">Home 2</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="login.html" class="btn btn-primary">Login</a>
+        </nav>
+        <div style="margin-top: auto; display: flex; gap: 20px; justify-content: center;">
+            <button class="theme-toggle" style="background: var(--bg-secondary); width: 50px; height: 50px;">
+                <i data-lucide="moon"></i>
+                <i data-lucide="sun" style="display: none;"></i>
+            </button>
+            <button class="rtl-toggle" style="background: var(--bg-secondary); width: 50px; height: 50px;">
+                <i data-lucide="languages"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section (Centered Full Width) -->
+    <section class="premium-hero"
+        style="min-height: 100vh; background: url('https://cdn.shopify.com/s/files/1/0752/3139/6086/files/unnamed-51.png'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; position: relative; color: white;">
+        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5);"></div>
+        <div class="container" style="position: relative; text-align: center;" data-animate>
+            <span style="letter-spacing: 5px; text-transform: uppercase; font-weight: 300;">The Elite Collection</span>
+            <h1 style="font-size: clamp(3rem, 10vw, 6.5rem); margin: 20px 0;">Defining <br>Modern <span
+                    style="color: var(--color-primary);">Luxury.</span></h1>
+            <p style="max-width: 600px; margin: 0 auto 40px; font-size: 1.2rem; opacity: 0.9;">BakeD Premium is an
+                exclusive service for high-end events that demand more than just a cake. We create temporary edible
+                landmarks.</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="btn btn-primary" style="min-width: 280px; justify-content: center;">Book
+                    Exclusive Initial</a>
+                <a href="#" class="btn btn-secondary"
+                    style="border-color: white; color: white; min-width: 280px; justify-content: center;">Our
+                    Process</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights Section (Staggered Grid) -->
+    <section class="section">
+        <div class="container">
+            <header class="section-header" data-animate>
+                <span class="section-subtitle">Exclusives</span>
+                <h2 class="section-title">The Art Of Perfection</h2>
+            </header>
+
+            <div style="display: flex; flex-direction: column; gap: 60px; max-width: 900px; margin: 0 auto; text-align: center;"
+                data-animate>
+                <div class="highlight-item"
+                    style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+                    <img src="https://shop.whiteflowercake.com/cdn/shop/products/Gourmet-cupcakes_1024x1024.jpg?v=1622473296"
+                        alt="Gourmet Cupcakes"
+                        style="width: 100%; max-width: 600px; height: 500px; border-radius: 20px; object-fit: cover;">
+                    <div>
+                        <h3 style="margin-bottom: 10px;">The Gold Standard</h3>
+                        <p style="color: var(--text-secondary);">Using 24k edible gold and the world's rarest cocoa
+                            beans to ensure an unparalleled experience.</p>
+                    </div>
+                </div>
+                <div class="highlight-item"
+                    style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_o1uTtnM-IBlBMCO7e7UI8piiJbolGJ_ZZQ&s"
+                        alt="Wedding Exclusive"
+                        style="width: 100%; max-width: 600px; height: 500px; border-radius: 20px; object-fit: cover;">
+                    <div>
+                        <h3 style="margin-bottom: 10px;">Sculptural Ingenuity</h3>
+                        <p style="color: var(--text-secondary);">Our cakes are structurally engineered pieces of art
+                            that push the boundaries of pâtisserie science.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section (Large Callout) -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container" style="text-align: center;" data-animate>
+            <h2 style="font-size: 3.5rem; margin-bottom: 40px;">"A BakeD creation is the final signature on your perfect
+                day."</h2>
+            <p style="max-width: 800px; margin: 0 auto; color: var(--text-secondary); font-size: 1.3rem;">Every year, we
+                take on a limited number of commissions to ensure that each client receives our absolute focus and the
+                highest level of craftsmanship.</p>
+        </div>
+    </section>
+
+    <!-- Features Section (Alternating) -->
+    <section class="section">
+        <div class="container">
+            <div data-animate style="margin-bottom: 80px;">
+                <header class="section-header">
+                    <span class="section-subtitle">Experience</span>
+                    <h2 class="section-title">The Path To Perfection</h2>
+                </header>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 80px; text-align: center;">
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 30px;" data-animate>
+                    <div style="max-width: 700px;">
+                        <span class="section-subtitle">Phase 01</span>
+                        <h3>Consultation & Sketching</h3>
+                        <p style="color: var(--text-secondary);">Your journey begins with a private tasting session
+                            where we sketch your cake live, tailoring every detail to your vision.</p>
+                    </div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsYArmX7bHfQrHxHS3fcrYcMNK2hpQ96bUsQ&s"
+                        alt="Process"
+                        style="border-radius: 20px; height: 400px; width: 100%; max-width: 800px; object-fit: cover;">
+                </div>
+
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 30px;" data-animate>
+                    <div style="max-width: 700px;">
+                        <span class="section-subtitle">Phase 02</span>
+                        <h3>The Build Phase</h3>
+                        <p style="color: var(--text-secondary);">Our artisans spend hundreds of hours sculpting sugar
+                            flowers and piping intricate lace patterns by hand.</p>
+                    </div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6d0IqXEFZz4PUJo-yH548RcRaMFSatK_rSg&s"
+                        alt="Process"
+                        style="border-radius: 20px; height: 400px; width: 100%; max-width: 800px; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing (3 Tier) -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <header class="section-header" data-animate>
+                <span class="section-subtitle">Investment</span>
+                <h2 class="section-title">Exclusive Collections</h2>
+            </header>
+
+            <div class="grid" style="grid-template-columns: repeat(3, 1fr);" data-animate>
+                <div class="card">
+                    <h3>The Classic</h3>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--color-primary); margin: 20px 0;">$850+</p>
+                    <ul style="margin-bottom: 30px; text-align: center; color: var(--text-secondary);">
+                        <li>Up to 3 Tiers</li>
+                        <li>Standard Sugar Flowers</li>
+                        <li>2 Flavors Selection</li>
+                        <li>Local Delivery</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-secondary">Inquire</a>
+                </div>
+                <div class="card"
+                    style="transform: scale(1.05); border: 2px solid var(--color-primary); background: var(--bg-primary);">
+                    <span
+                        style="background: var(--color-primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; margin-bottom: 10px;">POPULAR</span>
+                    <h3>The Couture</h3>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--color-primary); margin: 20px 0;">$1,800+
+                    </p>
+                    <ul style="margin-bottom: 30px; text-align: center; color: var(--text-secondary);">
+                        <li>Up to 5 Tiers</li>
+                        <li>Hand-Painted Details</li>
+                        <li>Bespoke Flavor Profile</li>
+                        <li>On-site Assembly</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Book Now</a>
+                </div>
+                <div class="card">
+                    <h3>The Avant-Garde</h3>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--color-primary); margin: 20px 0;">Custom
+                    </p>
+                    <ul style="margin-bottom: 30px; text-align: center; color: var(--text-secondary);">
+                        <li>Unlimited Tiers</li>
+                        <li>Structural Innovations</li>
+                        <li>Isabella Thorne Direct</li>
+                        <li>Nationwide Travel</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section 1: The Gastronomic Palette (Flavors) -->
+    <section class="section">
+        <div class="container">
+            <header class="section-header" data-animate>
+                <span class="section-subtitle">The Menu</span>
+                <h2 class="section-title">The Gastronomic Palette</h2>
+                <p style="max-width: 700px; margin: 20px auto 0; color: var(--text-secondary);">Beyond the architecture
+                    lies a symphony of flavors. We craft our own reductions, infusions, and pralines from scratch.</p>
+            </header>
+
+            <div class="grid" style="grid-template-columns: repeat(4, 1fr);" data-animate>
+                <div class="card" style="padding: 30px;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdMgvRvlMwu6qb50GQl5StfGtqtd4LP-zWqQ&s"
+                        alt="Wild Rose & Lychee"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;">
+                    <div style="color: var(--color-primary); margin-bottom: 20px;"><i data-lucide="flower"
+                            style="width: 32px; height: 32px;"></i></div>
+                    <h4>Wild Rose & Lychee</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Organic rose petal infusion with fresh
+                        lychee reduction and Madagascan vanilla sponge.</p>
+                </div>
+                <div class="card" style="padding: 30px;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7boAcFVnlKe9hLnwkFmEzL70GzEtgYMHgWQ&s"
+                        alt="Salted Espresso Gold"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;">
+                    <div style="color: var(--color-primary); margin-bottom: 20px;"><i data-lucide="coffee"
+                            style="width: 32px; height: 32px;"></i></div>
+                    <h4>Salted Espresso Gold</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Double-shot espresso soak, Fleur de Sel
+                        caramel, and 70% dark Valrhona ganache.</p>
+                </div>
+                <div class="card" style="padding: 30px;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv2fuKNnd5Xm98RgE7cROMkeeHhpWw2EpWOQ&s"
+                        alt="Yuzu & White Truffle"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;">
+                    <div style="color: var(--color-primary); margin-bottom: 20px;"><i data-lucide="citrus"
+                            style="width: 32px; height: 32px;"></i></div>
+                    <h4>Yuzu & White Truffle</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Japanese citrus zest paired with a
+                        whisper of white truffle oil and honey-almond praline.</p>
+                </div>
+                <div class="card" style="padding: 30px;">
+                    <img src="https://www.mashed.com/img/gallery/the-best-classic-pink-champagne-cake-youll-ever-eat/intro-1617986633.jpg"
+                        alt="Vintage Champagne"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;">
+                    <div style="color: var(--color-primary); margin-bottom: 20px;"><i data-lucide="glass-water"
+                            style="width: 32px; height: 32px;"></i></div>
+                    <h4>Vintage Champagne</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Dom Pérignon reduction mousse with wild
+                        strawberry compote and velvet sponge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Global Accolades (Logo Strip) -->
+    <section class="section" style="background: var(--bg-secondary); padding: 60px 0;">
+        <div class="container">
+            <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 40px; opacity: 0.6; filter: grayscale(1);"
+                data-animate>
+                <div style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700;">VOGUE</div>
+                <div style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700;">BRIDES</div>
+                <div style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700;">BAZAAR</div>
+                <div style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700;">ELLE</div>
+                <div style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700;">TATLER</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Meet the Designer (Founder) -->
+    <section class="section">
+        <div class="container" style="text-align: center;">
+            <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
+                <div data-animate style="margin-bottom: 40px;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7-h1clyNFrWq9EUpY_8q6N-6ZfE0IuI44Cw&s"
+                        alt="Isabella Thorne"
+                        style="border-radius: 20px; box-shadow: var(--shadow); width: 100%; max-width: 500px;">
+                </div>
+                <div data-animate>
+                    <span class="section-subtitle">The Visionary</span>
+                    <h2 class="section-title" style="margin-bottom: 30px;">Isabella Thorne</h2>
+                    <p
+                        style="font-style: italic; font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 30px; color: var(--color-primary);">
+                        "I don't just bake cakes; I architect memories that dissolve on the tongue."</p>
+                    <p style="color: var(--text-secondary); margin-bottom: 25px;">With over 15 years in Michelin-starred
+                        pâtisseries across Paris and London, Isabella founded BakeD to bring the precision of fine
+                        jewelry to the world of cake decoration.</p>
+                    <p style="color: var(--text-secondary); margin-bottom: 35px;">She personally oversees every Premium
+                        commission, ensuring that each sugar flower and every tier meets the Thorne standard of
+                        excellence.</p>
+                    <a href="contact.html" class="btn btn-primary"
+                        style="min-width: 250px; justify-content: center;">Book Private Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Shared) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px;">
+                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="width: 30px; height: 30px; fill: var(--color-primary);"><path d="M416 192c0-35.3-28.7-64-64-64h-16c0-35.3-28.7-64-64-64h-32c-35.3 0-64 28.7-64 64h-16c-35.3 0-64 28.7-64 64v32h320v-32zM80 448c0 17.7 14.3 32 32 32h288c17.7 0 32-14.3 32-32v-160H80v160zm352-256H80c-44.2 0-80 35.8-80 80v184c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V272c0-44.2-35.8-80-80-80z"/></svg>
+                        BakeD
+                    </a>
+                    <p class="footer-tagline">Redefining the art of cake decoration since 2012. We create edible masterpieces for life's most beautiful moments.</p>
+                    <div class="footer-socials" style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 25px;">
+                        <a href="#" class="social-icon icon-instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="social-icon icon-facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="social-icon icon-twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="social-icon icon-linkedin"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="services.html" class="footer-link">Our Services</a>
+                    <a href="workshops.html" class="footer-link">Workshops</a>
+                    <a href="blog.html" class="footer-link">Blog & News</a>
+                    <a href="contact.html" class="footer-link">Get in Touch</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Collections</h3>
+                    <a href="#" class="footer-link">Wedding Cakes</a>
+                    <a href="#" class="footer-link">Birthday Luxe</a>
+                    <a href="#" class="footer-link">Corporate Gifting</a>
+                    <a href="#" class="footer-link">Workshops</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p class="footer-link" style="display: flex; gap: 10px; align-items: center; cursor: default;">
+                        <i data-lucide="map-pin" style="width: 16px;"></i> 12 Sugar Bloom Lane, NY
+                    </p>
+                    <p class="footer-link" style="display: flex; gap: 10px; align-items: center; cursor: default;">
+                        <i data-lucide="phone" style="width: 16px;"></i> +1 (555) BAKE-ARTRCTY
+                    </p>
+                    <p class="footer-link" style="display: flex; gap: 10px; align-items: center; cursor: default;">
+                        <i data-lucide="mail" style="width: 16px;"></i> hello@bakedartisan.com
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BakeD Artisan Boutique. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

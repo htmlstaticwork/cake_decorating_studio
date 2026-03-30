@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Insights | BakeD Artisan Boutique</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- Shared Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M416 192c0-35.3-28.7-64-64-64h-16c0-35.3-28.7-64-64-64h-32c-35.3 0-64 28.7-64 64h-16c-35.3 0-64 28.7-64 64v32h320v-32zM80 448c0 17.7 14.3 32 32 32h288c17.7 0 32-14.3 32-32v-160H80v160zm352-256H80c-44.2 0-80 35.8-80 80v184c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V272c0-44.2-35.8-80-80-80z" />
+                </svg>
+                BakeD
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="home2.html" class="nav-link">Home 2</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="workshops.html" class="nav-link">Workshops</a>
+                <a href="blog.html" class="nav-link active">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle">
+                    <i data-lucide="moon" style="display: block;"></i>
+                    <i data-lucide="sun" style="display: none;"></i>
+                </button>
+                <button class="rtl-toggle">
+                    <i data-lucide="languages"></i>
+                </button>
+                <a href="login.html" class="btn btn-primary nav-login-btn" style="padding: 10px 24px;">Login</a>
+                <button class="menu-btn">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Side Drawer -->
+    <div class="overlay"></div>
+    <div class="drawer">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M416 192c0-35.3-28.7-64-64-64h-16c0-35.3-28.7-64-64-64h-32c-35.3 0-64 28.7-64 64h-16c-35.3 0-64 28.7-64 64v32h320v-32zM80 448c0 17.7 14.3 32 32 32h288c17.7 0 32-14.3 32-32v-160H80v160zm352-256H80c-44.2 0-80 35.8-80 80v184c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V272c0-44.2-35.8-80-80-80z" />
+                </svg>
+                BakeD
+            </a>
+        </div>
+        <nav style="display: flex; flex-direction: column; gap: 20px;">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="home2.html" class="nav-link">Home 2</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="login.html" class="btn btn-primary">Login</a>
+        </nav>
+        <div style="margin-top: auto; display: flex; gap: 20px; justify-content: center;">
+            <button class="theme-toggle" style="background: var(--bg-secondary); width: 50px; height: 50px;">
+                <i data-lucide="moon"></i>
+                <i data-lucide="sun" style="display: none;"></i>
+            </button>
+            <button class="rtl-toggle" style="background: var(--bg-secondary); width: 50px; height: 50px;">
+                <i data-lucide="languages"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section (Background Style) -->
+    <section class="hero-bg"
+        style="background-image: url('https://preview.redd.it/second-month-of-bujo-and-second-christmas-living-in-japan-i-v0-8t2ryq1jc7021.jpg?width=640&crop=smart&auto=webp&s=31183f0bd12d35534b7434c131700a85e7d2164d');">
+        <div class="container" data-animate>
+            <span class="section-subtitle">The Sugar Journal</span>
+            <h1 class="section-title" style="color: #fff;">Insights Into The Artisinal World</h1>
+            <p style="color: rgba(255,255,255,0.8); max-width: 700px; margin: 0 auto;">Where we share our inspirations,
+                technical secrets, and the latest trends from the global cake design landscape.</p>
+        </div>
+    </section>
+
+    <!-- Blog Grid Content -->
+    <section class="section">
+        <div class="container">
+            <div class="grid" style="grid-template-columns: repeat(3, 1fr);" data-animate>
+                <!-- Blog Item 1 -->
+                <div class="card" style="align-items: center; text-align: center; background: var(--bg-primary);">
+                    <img src="https://sweetmantra.in/wp-content/uploads/2025/03/Painting-cake-for-girl.jpg" alt="Blog"
+                        style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px; margin-bottom: 25px;">
+                    <div style="padding: 30px; display: flex; flex-direction: column; align-items: center;">
+                        <span
+                            style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-primary); font-weight: 600;">Wedding
+                            Trends</span>
+                        <h3 style="margin: 15px 0 10px; font-size: 1.4rem;">The Evolution of Structural Cake Design in
+                            2026</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 25px;">Exploring how
+                            modern architecture is influencing the shapes and tiers of wedding masterpieces...</p>
+                        <div
+                            style="display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%;">
+                            <span style="font-size: 0.8rem; color: var(--text-secondary);">Mar 25, 2026</span>
+                            <a href="#" style="color: var(--color-primary); font-weight: 600;">Read More <i
+                                    data-lucide="arrow-right"
+                                    style="width: 16px; display: inline; vertical-align: middle;"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Item 2 -->
+                <div class="card" style="align-items: center; text-align: center; background: var(--bg-primary);">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw5iUVDnZwtebTvE_FvxzXkI84Rtv8BPM3tA&s"
+                        alt="Blog"
+                        style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px; margin-bottom: 25px;">
+                    <div style="padding: 30px; display: flex; flex-direction: column; align-items: center;">
+                        <span
+                            style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-primary); font-weight: 600;">Culinary
+                            Art</span>
+                        <h3 style="margin: 15px 0 10px; font-size: 1.4rem;">Decoding The Darkest Cocoa: A Gourmet Flavor
+                            Profile</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 25px;">Why the source
+                            of your chocolate matters more than the sugar content of your cake...</p>
+                        <div
+                            style="display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%;">
+                            <span style="font-size: 0.8rem; color: var(--text-secondary);">Mar 18, 2026</span>
+                            <a href="#" style="color: var(--color-primary); font-weight: 600;">Read More <i
+                                    data-lucide="arrow-right"
+                                    style="width: 16px; display: inline; vertical-align: middle;"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Item 3 -->
+                <div class="card" style="align-items: center; text-align: center; background: var(--bg-primary);">
+                    <img src="https://media.istockphoto.com/id/171360702/photo/overhead-view-of-tray-with-cupcakes.jpg?s=612x612&w=0&k=20&c=BA2icTFf-GWmcCqQeYLZ72P_sQngIYLR-E8vuAHPmy4="
+                        alt="Blog"
+                        style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px; margin-bottom: 25px;">
+                    <div style="padding: 30px; display: flex; flex-direction: column; align-items: center;">
+                        <span
+                            style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-primary); font-weight: 600;">Small
+                            Bites</span>
+                        <h3 style="margin: 15px 0 10px; font-size: 1.4rem;">The Psychology of Petite Fours at Corporate
+                            Events</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 25px;">How bite-sized
+                            elegance can completely transform the social dynamics of your business gala...</p>
+                        <div
+                            style="display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%;">
+                            <span style="font-size: 0.8rem; color: var(--text-secondary);">Mar 10, 2026</span>
+                            <a href="#" style="color: var(--color-primary); font-weight: 600;">Read More <i
+                                    data-lucide="arrow-right"
+                                    style="width: 16px; display: inline; vertical-align: middle;"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Item 4 -->
+                <div class="card" style="align-items: center; text-align: center; background: var(--bg-primary);">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWsmv5SHAvZApEMNGYNzbqGmxHGbhuXmhnFg&s"
+                        alt="Blog"
+                        style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px; margin-bottom: 25px;">
+                    <div style="padding: 30px; display: flex; flex-direction: column; align-items: center;">
+                        <span
+                            style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-primary); font-weight: 600;">Behind
+                            The Scenes</span>
+                        <h3 style="margin: 15px 0 10px; font-size: 1.4rem;">Inside The Thorne Studio: A Typical
+                            Hand-Painting Day</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 25px;">Take a peek at
+                            the literal artistry that happens when edible paints meet sugar canvases...</p>
+                        <div
+                            style="display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%;">
+                            <span style="font-size: 0.8rem; color: var(--text-secondary);">Feb 28, 2026</span>
+                            <a href="#" style="color: var(--color-primary); font-weight: 600;">Read More <i
+                                    data-lucide="arrow-right"
+                                    style="width: 16px; display: inline; vertical-align: middle;"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Item 5 -->
+                <div class="card" style="align-items: center; text-align: center; background: var(--bg-primary);">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRrgywqb0AwTo9V7MKp0KuvUpof0XJ9FcccA&s"
+                        alt="Blog"
+                        style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px; margin-bottom: 25px;">
+                    <div style="padding: 30px; display: flex; flex-direction: column; align-items: center;">
+                        <span
+                            style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-primary); font-weight: 600;">Design
+                            Theory</span>
+                        <h3 style="margin: 15px 0 10px; font-size: 1.4rem;">Minimalism vs. Maximalism: The 2026 Debate
+                        </h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 25px;">Does your
+                            event need a towering sculpture or a single, perfect white tier?</p>
+                        <div
+                            style="display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%;">
+                            <span style="font-size: 0.8rem; color: var(--text-secondary);">Feb 15, 2026</span>
+                            <a href="#" style="color: var(--color-primary); font-weight: 600;">Read More <i
+                                    data-lucide="arrow-right"
+                                    style="width: 16px; display: inline; vertical-align: middle;"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Item 6 -->
+                <div class="card" style="align-items: center; text-align: center; background: var(--bg-primary);">
+                    <img src="https://www.inspiredtaste.net/wp-content/uploads/2025/04/Banana-Cake-Recipe-2.jpg"
+                        alt="Blog"
+                        style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px; margin-bottom: 25px;">
+                    <div style="padding: 30px; display: flex; flex-direction: column; align-items: center;">
+                        <span
+                            style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-primary); font-weight: 600;">Gourmet
+                            Tips</span>
+                        <h3 style="margin: 15px 0 10px; font-size: 1.4rem;">Preserving Your Sugar Flowers Forever</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 25px;">A step-by-step
+                            guide to keeping your edible memories as a permanent vanity piece.</p>
+                        <div
+                            style="display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%;">
+                            <span style="font-size: 0.8rem; color: var(--text-secondary);">Feb 05, 2026</span>
+                            <a href="#" style="color: var(--color-primary); font-weight: 600;">Read More <i
+                                    data-lucide="arrow-right"
+                                    style="width: 16px; display: inline; vertical-align: middle;"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Item 7 -->
+                <div class="card" style="align-items: center; text-align: center; background: var(--bg-primary);">
+                    <img src="https://im.whatshot.in/img/2019/May/og-2-1557383487.jpg" alt="Blog"
+                        style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px; margin-bottom: 25px;">
+                    <div style="padding: 30px; display: flex; flex-direction: column; align-items: center;">
+                        <span
+                            style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-primary); font-weight: 600;">Boutique
+                            Life</span>
+                        <h3 style="margin: 15px 0 10px; font-size: 1.4rem;">Seasonal Palettes: Spring 2026 Edition</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 25px;">How we're
+                            using botanical extracts to create the next generation of icing colors.</p>
+                        <div
+                            style="display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%;">
+                            <span style="font-size: 0.8rem; color: var(--text-secondary);">Jan 22, 2026</span>
+                            <a href="#" style="color: var(--color-primary); font-weight: 600;">Read More <i
+                                    data-lucide="arrow-right"
+                                    style="width: 16px; display: inline; vertical-align: middle;"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Item 8 -->
+                <div class="card" style="align-items: center; text-align: center; background: var(--bg-primary);">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDWMac_nHLA5JUAWxBEfzxcXkpTRaFhcvFBQ&s"
+                        alt="Blog"
+                        style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px; margin-bottom: 25px;">
+                    <div style="padding: 30px; display: flex; flex-direction: column; align-items: center;">
+                        <span
+                            style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-primary); font-weight: 600;">Expert
+                            Advice</span>
+                        <h3 style="margin: 15px 0 10px; font-size: 1.4rem;">Cake Tasting 101: Preparing Your Palate</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 25px;">What to eat
+                            (and avoid) before your big consultation session.</p>
+                        <div
+                            style="display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%;">
+                            <span style="font-size: 0.8rem; color: var(--text-secondary);">Jan 10, 2026</span>
+                            <a href="#" style="color: var(--color-primary); font-weight: 600;">Read More <i
+                                    data-lucide="arrow-right"
+                                    style="width: 16px; display: inline; vertical-align: middle;"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Item 9 -->
+                <div class="card" style="align-items: center; text-align: center; background: var(--bg-primary);">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe7dpv9uUsmQHLuBShO7GOZrwx1_A9UzB3Ow&s"
+                        alt="Blog"
+                        style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px; margin-bottom: 25px;">
+                    <div style="padding: 30px; display: flex; flex-direction: column; align-items: center;">
+                        <span
+                            style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-primary); font-weight: 600;">Global
+                            Trends</span>
+                        <h3 style="margin: 15px 0 10px; font-size: 1.4rem;">Parisian Pâtisserie in a Modern NYC Kitchen
+                        </h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 25px;">Bridging the
+                            gap between traditional French techniques and contemporary urban design.</p>
+                        <div
+                            style="display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%;">
+                            <span style="font-size: 0.8rem; color: var(--text-secondary);">Jan 02, 2026</span>
+                            <a href="#" style="color: var(--color-primary); font-weight: 600;">Read More <i
+                                    data-lucide="arrow-right"
+                                    style="width: 16px; display: inline; vertical-align: middle;"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Item 10 -->
+                <div class="card" style="align-items: center; text-align: center; background: var(--bg-primary);">
+                    <img src="https://images.unsplash.com/photo-1540331547168-8b63109225b7?auto=format&fit=crop&q=80&w=800"
+                        alt="Blog"
+                        style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px; margin-bottom: 25px;">
+                    <div style="padding: 30px; display: flex; flex-direction: column; align-items: center;">
+                        <span
+                            style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-primary); font-weight: 600;">Sustainability</span>
+                        <h3 style="margin: 15px 0 10px; font-size: 1.4rem;">The Rise of Eco-Conscious Sweeteners</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 25px;">Exploring how
+                            boutique pâtisseries are leading the charge in sustainable sugar alternatives...</p>
+                        <div
+                            style="display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%;">
+                            <span style="font-size: 0.8rem; color: var(--text-secondary);">Dec 15, 2025</span>
+                            <a href="#" style="color: var(--color-primary); font-weight: 600;">Read More <i
+                                    data-lucide="arrow-right"
+                                    style="width: 16px; display: inline; vertical-align: middle;"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Item 11 -->
+                <div class="card" style="align-items: center; text-align: center; background: var(--bg-primary);">
+                    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&q=80&w=800"
+                        alt="Blog"
+                        style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px; margin-bottom: 25px;">
+                    <div style="padding: 30px; display: flex; flex-direction: column; align-items: center;">
+                        <span
+                            style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-primary); font-weight: 600;">Technique</span>
+                        <h3 style="margin: 15px 0 10px; font-size: 1.4rem;">Balanced Textures: From Crunch to Silk</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 25px;">Mastering the
+                            art of textural contrast in multi-layered boutique desserts...</p>
+                        <div
+                            style="display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%;">
+                            <span style="font-size: 0.8rem; color: var(--text-secondary);">Dec 01, 2025</span>
+                            <a href="#" style="color: var(--color-primary); font-weight: 600;">Read More <i
+                                    data-lucide="arrow-right"
+                                    style="width: 16px; display: inline; vertical-align: middle;"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Item 12 -->
+                <div class="card" style="align-items: center; text-align: center; background: var(--bg-primary);">
+                    <img src="https://www.pastelcolorpalettes.com/images/image-palette/vanilla-and-buttercream-cake.png"
+                        alt="Blog"
+                        style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px; margin-bottom: 25px;">
+                    <div style="padding: 30px; display: flex; flex-direction: column; align-items: center;">
+                        <span
+                            style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-primary); font-weight: 600;">Color
+                            Palette</span>
+                        <h3 style="margin: 15px 0 10px; font-size: 1.4rem;">Dusty Rose: The Shade of the Season</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 25px;">Why this muted
+                            pink is becoming the foundation for 2026's most elegant events...</p>
+                        <div
+                            style="display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%;">
+                            <span style="font-size: 0.8rem; color: var(--text-secondary);">Nov 20, 2025</span>
+                            <a href="#" style="color: var(--color-primary); font-weight: 600;">Read More <i
+                                    data-lucide="arrow-right"
+                                    style="width: 16px; display: inline; vertical-align: middle;"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px;">
+                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"
+                            style="width: 30px; height: 30px; fill: var(--color-primary);">
+                            <path
+                                d="M416 192c0-35.3-28.7-64-64-64h-16c0-35.3-28.7-64-64-64h-32c-35.3 0-64 28.7-64 64h-16c-35.3 0-64 28.7-64 64v32h320v-32zM80 448c0 17.7 14.3 32 32 32h288c17.7 0 32-14.3 32-32v-160H80v160zm352-256H80c-44.2 0-80 35.8-80 80v184c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V272c0-44.2-35.8-80-80-80z" />
+                        </svg>
+                        BakeD
+                    </a>
+                    <p class="footer-tagline">Redefining the art of cake decoration since 2012. We create edible
+                        masterpieces for life's most beautiful moments.</p>
+                    <div class="footer-socials" style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 25px;">
+                        <a href="#" class="social-icon icon-instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="social-icon icon-facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="social-icon icon-twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="social-icon icon-linkedin"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="services.html" class="footer-link">Our Services</a>
+                    <a href="workshops.html" class="footer-link">Workshops</a>
+                    <a href="blog.html" class="footer-link">Blog & News</a>
+                    <a href="contact.html" class="footer-link">Get in Touch</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Collections</h3>
+                    <a href="#" class="footer-link">Wedding Cakes</a>
+                    <a href="#" class="footer-link">Birthday Luxe</a>
+                    <a href="#" class="footer-link">Corporate Gifting</a>
+                    <a href="#" class="footer-link">Workshops</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p class="footer-link" style="display: flex; gap: 10px; align-items: center; cursor: default;">
+                        <i data-lucide="map-pin" style="width: 16px;"></i> 12 Sugar Bloom Lane, NY
+                    </p>
+                    <p class="footer-link" style="display: flex; gap: 10px; align-items: center; cursor: default;">
+                        <i data-lucide="phone" style="width: 16px;"></i> +1 (555) BAKE-ARTRCTY
+                    </p>
+                    <p class="footer-link" style="display: flex; gap: 10px; align-items: center; cursor: default;">
+                        <i data-lucide="mail" style="width: 16px;"></i> hello@bakedartisan.com
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BakeD Artisan Boutique. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <style>
+        @media (max-width: 1024px) {
+            .grid[style*="column"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid[style*="column"] {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</body>
+
+</html>
