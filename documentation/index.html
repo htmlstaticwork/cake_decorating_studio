@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation | Cake Decorating Studio</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ==========================================================================
+           GLOBAL STYLES & VARIABLES
+           ========================================================================== */
+        :root {
+            --color-primary: #FF5D8F;
+            --color-secondary: #2C3333;
+            --color-accent: #D4AF37;
+            --bg-dark: #0A0A0A;
+            --bg-card: #141414;
+            --bg-sidebar: #0F0F0F;
+            --text-main: #FDF2F5;
+            --text-muted: #CBB4B9;
+            --border: #2A1A1E;
+            --sidebar-width: 280px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius: 12px;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+        }
+
+        /* Documentation Layout */
+        .doc-sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--bg-sidebar);
+            border-right: 1px solid var(--border);
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
+        }
+
+        .doc-content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            padding: 2rem 4rem;
+            max-width: 1200px;
+        }
+
+        /* ==========================================================================
+           COMPONENTS
+           ========================================================================== */
+        
+        /* Logo */
+        .sidebar-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .sidebar-header .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation */
+        .doc-nav {
+            list-style: none;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .doc-nav li {
+            margin-bottom: 0.5rem;
+        }
+
+        .doc-nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            display: block;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .doc-nav a i {
+            width: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .doc-nav a:hover, .doc-nav a.active {
+            background: rgba(255, 93, 143, 0.1);
+            color: var(--color-primary);
+        }
+
+        .doc-nav a.active {
+            font-weight: 600;
+            border-left: 3px solid var(--color-primary);
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: var(--sidebar-width);
+            width: calc(100% - var(--sidebar-width));
+            height: 4px;
+            background: transparent;
+            z-index: 1100;
+        }
+
+        #progress-bar {
+            height: 100%;
+            background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        /* Cards & Sections */
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        .section-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 2rem;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-primary);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Typography */
+        h3 { margin-bottom: 1rem; color: var(--text-main); }
+        p { margin-bottom: 1rem; color: var(--text-muted); }
+        ul, ol { margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-muted); }
+        li { margin-bottom: 0.5rem; }
+
+        /* Code Block Style */
+        .code-block {
+            background: #000;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #4AF626;
+            margin: 1rem 0;
+            position: relative;
+            overflow-x: auto;
+        }
+
+        .code-block::after {
+            content: 'CODE';
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            font-size: 0.7rem;
+            color: #555;
+            letter-spacing: 1px;
+        }
+
+        /* Table */
+        .doc-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+
+        .doc-table th, .doc-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .doc-table th {
+            color: var(--color-primary);
+            background: rgba(255, 93, 143, 0.05);
+        }
+
+        /* Buttons */
+        .btn-pdf {
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 2rem;
+            transition: var(--transition);
+            width: fit-content;
+        }
+
+        .btn-pdf:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 93, 143, 0.3);
+        }
+
+        /* ==========================================================================
+           RESPONSIVE
+           ========================================================================== */
+        @media (max-width: 1024px) {
+            .doc-content {
+                padding: 2rem 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .doc-sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 1rem;
+            }
+            .sidebar-header { margin-bottom: 1rem; }
+            .doc-nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            .doc-nav a { padding: 0.5rem 0.8rem; font-size: 0.85rem; }
+            .doc-content {
+                margin-left: 0;
+                padding: 1.5rem;
+            }
+            .progress-container {
+                left: 0;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .section-header h2 { font-size: 1.8rem; }
+            .card { padding: 1.2rem; }
+        }
+
+        /* ==========================================================================
+           PRINT STYLES
+           ========================================================================== */
+        @media print {
+            .doc-sidebar, .progress-container, .btn-pdf {
+                display: none !important;
+            }
+            .doc-content {
+                margin-left: 0 !important;
+                padding: 0 !important;
+                background: white;
+                color: black;
+            }
+            .card {
+                background: white !important;
+                color: black !important;
+                border: 1px solid #ddd !important;
+                break-inside: avoid;
+                box-shadow: none !important;
+            }
+            h1, h2, h3, h4, .card-title {
+                color: #B00 !important; /* Professional print color */
+            }
+            p, li, td, th {
+                color: #333 !important;
+            }
+            .code-block {
+                background: #f4f4f4;
+                color: #000;
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div class="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <!-- Sticky Sidebar Navigation -->
+    <aside class="doc-sidebar">
+        <div class="sidebar-header">
+            <div class="logo-text">Sweet Frosting</div>
+            <small style="color: var(--text-muted); opacity: 0.7;">Documentation v1.0</small>
+        </div>
+        
+        <ul class="doc-nav">
+            <li><a href="#introduction" class="active"><i class="fas fa-info-circle"></i> Introduction</a></li>
+            <li><a href="#installation"><i class="fas fa-download"></i> Installation Guide</a></li>
+            <li><a href="#customization"><i class="fas fa-paint-brush"></i> Customization</a></li>
+            <li><a href="#page-structure"><i class="fas fa-sitemap"></i> Page Structure</a></li>
+            <li><a href="#credits"><i class="fas fa-award"></i> Credits</a></li>
+            <li><a href="#changelog"><i class="fas fa-history"></i> Changelog</a></li>
+            <li><a href="#support"><i class="fas fa-headset"></i> Support</a></li>
+        </ul>
+
+        <button class="btn-pdf" onclick="window.print()">
+            <i class="fas fa-file-pdf"></i> Download PDF
+        </button>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="doc-content">
+        
+        <!-- ================= INTRODUCTION SECTION ================= -->
+        <section id="introduction">
+            <div class="section-header">
+                <h2>Welcome</h2>
+                <p>Complete guide to managing and customizing your Cake Decorating Studio website.</p>
+            </div>
+            <div class="card">
+                <p>Congratulations on your new website! <strong>Sweet Frosting</strong> is a high-performance, premium web template designed specifically for boutique bakeries and custom cake decorators. This documentation will walk you through everything from setup to advanced customization.</p>
+                <p>The website is built with modern web technologies, ensuring it is 100% responsive, SEO-friendly, and lightweight.</p>
+            </div>
+        </section>
+
+        <!-- ================= INSTALLATION GUIDE ================= -->
+        <section id="installation">
+            <div class="section-header">
+                <h2>Installation Guide</h2>
+                <p>How to set up your website for local development and live hosting.</p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title"><i class="fas fa-laptop-code"></i> Local Setup</h3>
+                <p>To view the website on your computer, follow these steps:</p>
+                <ol>
+                    <li><strong>Extract Files:</strong> Unzip the project folder to your desired location.</li>
+                    <li><strong>Editor:</strong> Open the folder using a code editor like VS Code.</li>
+                    <li><strong>Live Server:</strong> Right-click on <code>index.html</code> and select "Open with Live Server".</li>
+                </ol>
+                <div class="code-block">
+                    # Example: Opening in VS Code
+                    code .
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title"><i class="fas fa-cloud-upload-alt"></i> Hosting & Deployment</h3>
+                <p>To make your website live, we recommend the following platforms:</p>
+                <ul>
+                    <li><strong>Vercel (Recommended):</strong> Drag and drop the folder into the Vercel dashboard.</li>
+                    <li><strong>Netlify:</strong> Use the "Deploy manually" feature by uploading the folder.</li>
+                    <li><strong>Github Pages:</strong> Push the code to a repository and enable Pages in settings.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title"><i class="fas fa-folder-open"></i> Folder Structure</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr>
+                            <th>File / Folder</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>/documentation</td><td>The guide you are currently reading.</td></tr>
+                        <tr><td>index.html</td><td>The main homepage (Style 1).</td></tr>
+                        <tr><td>home2.html</td><td>Alternative homepage layout.</td></tr>
+                        <tr><td>style.css</td><td>The main styling engine (UI/UX).</td></tr>
+                        <tr><td>script.js</td><td>Interactivity and form logic.</td></tr>
+                        <tr><td>blog.html</td><td>Article listing and showcase.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ================= CUSTOMIZATION GUIDE ================= -->
+        <section id="customization">
+            <div class="section-header">
+                <h2>Customization</h2>
+                <p>Easily adapt the website to match your unique brand identity.</p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title"><i class="fas fa-palette"></i> Colors (CSS Variables)</h3>
+                <p>All brand colors are stored as CSS variables in <code>style.css</code>. Modify these to change the theme site-wide.</p>
+                <!-- TODO: Replace brand colors in :root section -->
+                <div class="code-block">
+:root {
+  --color-primary: #FF5D8F; /* Primary Rose Color */
+  --color-secondary: #2C3333; /* Deep Charcoal Text */
+  --color-accent: #D4AF37;   /* Gold Highlights */
+}
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title"><i class="fas fa-font"></i> Fonts</h3>
+                <p>The site uses Google Fonts. To change them, replace the links in the <code>&lt;head&gt;</code> of your HTML files.</p>
+                <ul>
+                    <li><strong>Headings:</strong> Times New Roman / Playfair Display</li>
+                    <li><strong>Body Text:</strong> Outfit (Sans-serif)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title"><i class="fas fa-edit"></i> Content Replacement</h3>
+                <p>To update the text or images, locate the following markers in the HTML files:</p>
+                <ul>
+                    <li><strong>Hero Section:</strong> Look for the <code>&lt;h1&gt;</code> tag near the top.</li>
+                    <li><strong>Images:</strong> Update the <code>src="..."</code> attribute in <code>&lt;img&gt;</code> tags.</li>
+                    <li><strong>Contact Info:</strong> Search for the "Contact" section footer to update your email and phone.</li>
+                </ul>
+                <p><em>Pro Tip: Use "Find and Replace" (Ctrl+H) to update your brand name across all pages at once.</em></p>
+            </div>
+        </section>
+
+        <!-- ================= PAGE STRUCTURE ================= -->
+        <section id="page-structure">
+            <div class="section-header">
+                <h2>Page Structure</h2>
+                <p>An overview of the available templates and their internal sections.</p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title"><i class="fas fa-home"></i> Homepages (index / home2)</h3>
+                <p>Includes high-impact Hero banner, About Us story, Featured Cake Collections, and Testimonials.</p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title"><i class="fas fa-birthday-cake"></i> Services & Workshops</h3>
+                <p>Dedicated pages to showcase your custom cake tiers, pricing tiers, and upcoming decorating classes.</p>
+            </div>
+            
+            <div class="card">
+                <h3 class="card-title"><i class="fas fa-envelope"></i> Contact Page</h3>
+                <p>Features a working contact form, Google Maps integration (placeholder), and direct social media links.</p>
+            </div>
+        </section>
+
+        <!-- ================= CREDITS SECTION ================= -->
+        <section id="credits">
+            <div class="section-header">
+                <h2>Credits</h2>
+                <p>Third-party resources used in this template.</p>
+            </div>
+            <div class="card">
+                <ul>
+                    <li><strong>Typography:</strong> Google Fonts (Outfit, Playfair Display)</li>
+                    <li><strong>Icons:</strong> FontAwesome 6.4 Free Tier</li>
+                    <li><strong>Images:</strong> Unsplash / Pexels (License: CC0)</li>
+                    <li><strong>Development:</strong> Built with Modern HTML5, CSS3, and Vanilla JS</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ================= CHANGELOG ================= -->
+        <section id="changelog">
+            <div class="section-header">
+                <h2>Changelog</h2>
+                <p>Track history of improvements and updates.</p>
+            </div>
+            <div class="card">
+                <h3 class="card-title"><i class="fas fa-code-branch"></i> Version 1.0.0</h3>
+                <ul>
+                    <li>Initial stable release</li>
+                    <li>Implemented Dark/Light theme toggle</li>
+                    <li>Added Workshop booking UI</li>
+                    <li>Fully responsive documentation system</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ================= SUPPORT SECTION ================= -->
+        <section id="support">
+            <div class="section-header">
+                <h2>Support</h2>
+                <p>Need help? We're here for you.</p>
+            </div>
+            <div class="card">
+                <p>If you encounter any issues or have questions regarding the customization of this template, please reach out via our official support channels.</p>
+                <table class="doc-table">
+                    <tr>
+                        <td><strong>Contact Method:</strong></td>
+                        <td>support@sweetfrosting.com</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Response Time:</strong></td>
+                        <td>24 - 48 hours (Mon-Fri)</td>
+                    </tr>
+                </table>
+                <p>Please include your order details and a screenshot of the issue for faster assistance.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JavaScript Functions -->
+    <script>
+        /**
+         * Progress Bar Logic
+         * Updates the width of the top progress bar as user scrolls.
+         */
+        window.onscroll = function() {
+            updateProgressBar();
+            updateActiveLink();
+        };
+
+        function updateProgressBar() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        }
+
+        /**
+         * Sidebar Active Highlighting
+         * Detects which section is in view and highlights the corresponding sidebar link.
+         */
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".doc-nav a");
+
+        function updateActiveLink() {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href").includes(current)) {
+                    link.classList.add("active");
+                }
+            });
+        }
+
+        /**
+         * Smooth Scroll (Handled by CSS, but JS fallback for older browsers)
+         */
+        navLinks.forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
