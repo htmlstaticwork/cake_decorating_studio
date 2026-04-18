@@ -364,7 +364,7 @@ img {
   justify-content: center;
   border-radius: 12px;
   transition: var(--transition);
-  border: 1px solid transparent;
+  border: 1px solid var(--border-color);
 }
 
 .theme-toggle i,
@@ -1050,5 +1050,56 @@ img {
   .back-to-top {
     bottom: 20px;
     right: 20px;
+  }
+}
+
+/* RTL Toggle Enhancements */
+.rtl-toggle {
+    width: auto !important;
+    padding: 0 12px;
+    gap: 8px;
+}
+
+.rtl-toggle span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+}
+
+/* Auth Toggles Transparency Override */
+.auth-toggles .theme-toggle,
+.auth-toggles .rtl-toggle {
+    border-color: transparent !important;
+}
+
+/* Global Hero Fixes for 360px */
+@media (max-width: 360px) {
+  .hero-bg h1, 
+  .premium-hero h1 {
+    font-size: 2.2rem !important;
+    line-height: 1.2 !important;
+    margin: 15px 0 !important;
+  }
+  .hero-bg .container,
+  .premium-hero .container {
+    padding: 0 15px !important;
+  }
+  .hero-bg .section-subtitle,
+  .premium-hero span:first-child:not(nav span):not(.logo span) {
+    letter-spacing: 2px !important;
+    font-size: 0.9rem !important;
+    display: block !important;
+  }
+  .hero-bg p,
+  .premium-hero p {
+    font-size: 1rem !important;
+    margin-bottom: 25px !important;
+    padding: 0 10px !important;
+  }
+  .hero-bg .btn,
+  .premium-hero .btn {
+    min-width: 100% !important;
+    margin-bottom: 10px !important;
+    justify-content: center !important;
   }
 }
